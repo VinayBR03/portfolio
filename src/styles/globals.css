@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Karla:wght@400;500&family=IBM+Plex+Sans:wght@500&family=JetBrains+Mono:wght@400&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-theme-bg: var(--color-bg);
+  --color-theme-card: var(--color-card);
+  --color-theme-border: var(--color-border);
+  --color-theme-text: var(--color-text);
+  --color-theme-muted: var(--color-muted);
+
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Karla", sans-serif;
+  --font-nav: "IBM Plex Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  --color-bg: #F5F5F4;
+  --color-card: #FFFFFF;
+  --color-border: #E5E5E5;
+  --color-text: #171717;
+  --color-muted: #525252;
+  --color-selection-bg: #059669;
+  --color-selection-text: #F5F5F4;
+}
+
+.dark {
+  --color-bg: #121212;
+  --color-card: #1E1E1E;
+  --color-border: #2D2D2D;
+  --color-text: #EDEDED;
+  --color-muted: #B3B3B3;
+  --color-selection-bg: #34D399;
+  --color-selection-text: #121212;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
+::-moz-selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
+.gradient-text {
+  background-image: linear-gradient(135deg, #34D399 0%, #2DD4BF 50%, #22D3EE 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
